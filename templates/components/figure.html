@@ -1,8 +1,13 @@
-{% if src %}
+{#- Content is templated before Markdown is parsed, so the output must not
+    contain blank lines: they would end the HTML block and turn the indented
+    remainder into a code block. -#}
+{% component figure(src="", alt="", position="", style="", caption="", caption_position="", caption_style="") -%}
+{% if src -%}
   <figure class="{% if position %}{{ position }}{% else -%} center {%- endif %}" >
     <img src="{{ src | safe }}"{% if alt %} alt="{{ alt }}"{% endif %}{% if style %} style="{{ style }}"{% endif %} decoding="async" loading="lazy"/>
-    {% if caption %}
+    {%- if caption %}
       <figcaption class="{% if caption_position %}{{ caption_position }}{% else -%} center {%- endif %}"{% if caption_style %} style="{{ caption_style | safe }}"{% endif %}>{{ caption | markdown() | safe }}</figcaption>
-    {% endif %}
+    {%- endif %}
   </figure>
-{% endif %}
+{%- endif %}
+{%- endcomponent figure %}

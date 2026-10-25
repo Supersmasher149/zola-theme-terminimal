@@ -8,15 +8,16 @@ tags = ["zola", "theme", "showcase"]
 
 Welcome to Terminimal! This is a theme showcase post.
 
-Code block (using "boron" theme):
+Code block (using "catppuccin-mocha" theme):
 
 ```python
 #!/usr/bin/python3
 
+
 class HelloPrinter:
     def __init__(self, thing):
         self.thing = thing
-        
+
     def __call__(self):
         print(f"Hello, {self.thing}!")
 
@@ -68,34 +69,34 @@ This is where the post summary ends.
 
 The second part follows here.
 
-## Shortcodes
+## Components
 
-`figure` shortcode:
+`figure` component:
 
 ```
-figure(src="http://rustacean.net/assets/rustacean-flat-gesture.png",
-       style="width: 25%;",
-       position="center",
-       caption_position="left",
-       caption="**Ferris**, the (unofficial) Rust mascot",
-       caption_style="font-weight: bold; font-style: italic;")
+<figure src="http://rustacean.net/assets/rustacean-flat-gesture.png"
+        style="width: 25%;"
+        position="center"
+        caption_position="left"
+        caption="**Ferris**, the (unofficial) Rust mascot"
+        caption_style="font-weight: bold; font-style: italic;" />
 ```
 
-{{ figure(src="http://rustacean.net/assets/rustacean-flat-gesture.png",
-          style="width: 25%;",
-          position="center",
-          caption_position="left",
-          caption="**Ferris**, the (unofficial) Rust mascot",
-          caption_style="font-style: italic;") }}
+{{<figure src="http://rustacean.net/assets/rustacean-flat-gesture.png"
+          style="width: 25%;"
+          position="center"
+          caption_position="left"
+          caption="**Ferris**, the (unofficial) Rust mascot"
+          caption_style="font-style: italic;" />}}
 
 ---
 
-`image` shortcode:
+`image` component:
 
 ```
-image(src="https://upload.wikimedia.org/wikipedia/commons/3/35/Tux.svg",
-      position="left")
+<image src="https://upload.wikimedia.org/wikipedia/commons/3/35/Tux.svg"
+       position="left" />
 ```
 
-{{ image(src="https://upload.wikimedia.org/wikipedia/commons/3/35/Tux.svg",
-         position="left") }}
+{{<image src="https://upload.wikimedia.org/wikipedia/commons/3/35/Tux.svg"
+         position="left" />}}
